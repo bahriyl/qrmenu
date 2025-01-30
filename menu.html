@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Restaurant</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="menu-styles.css">
+
+    <!-- Google Fonts (Lato) -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Menu Page Header -->
+    <header class="menu-header">
+        <div class="menu-header-container">
+            <!-- Sidebar Toggle Button (Only for Mobile) -->
+            <button id="sidebar-toggle" class="sidebar-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <img src="" alt="Restaurant Logo" class="menu-logo"> <!-- Dynamic Logo -->
+            <div class="menu-header-info">
+                <h2 class="restaurant-name"></h2> <!-- Dynamic Restaurant Name -->
+                <p class="restaurant-address"></p> <!-- Dynamic Address -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="menu-container">
+
+        <!-- Left Sidebar -->
+        <aside class="menu-sidebar">
+            <!-- Close Sidebar Button (Only for Mobile) -->
+            <button id="close-sidebar" class="close-sidebar">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" placeholder="🔍 Назва страви" id="search-input">
+            </div>
+
+            <!-- Menu Sections -->
+            <nav class="menu-nav">
+                <ul id="menu-sections"></ul> <!-- Sections will be dynamically added -->
+            </nav>
+        </aside>
+
+        <!-- Overlay for Closing Sidebar -->
+        <div class="sidebar-overlay"></div>
+
+        <!-- Right Content Area -->
+        <main class="menu-content">
+            <div id="dishes-container"></div> <!-- Dishes will be dynamically inserted -->
+        </main>
+
+    </div>
+
+    <!-- Dish Modal -->
+    <div id="dish-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <img src="" alt="Dish Image" class="modal-image">
+            <div class="modal-info">
+                <h2 class="modal-title"></h2>
+                <p class="modal-price"></p>
+                <p class="modal-description"></p>
+                <div class="modal-tags"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to JavaScript -->
+    <script src="menu-script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,618 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+/* Menu Header */
+.menu-header {
+    background: #ffffff; /* White background */
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #e0e0e0; /* Light grey bottom border */
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white; /* Ensure background is visible */
+    z-index: 1000; /* High z-index to keep it above other elements */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add shadow for visibility */
+    padding: 15px 20px;
+}
+
+/* Header Content */
+.menu-header-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Logo */
+.menu-logo {
+    width: 50px; /* Adjust logo size */
+    height: 50px;
+    border-radius: 50%; /* Circular shape */
+    object-fit: cover;
+}
+
+/* Name and Address */
+.menu-header-info h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.menu-header-info p {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Main Container */
+.menu-container {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Prevent content from being hidden under fixed header */
+.menu-container {
+    margin-top: 80px; /* Adjust based on header height */
+}
+
+/* Sidebar */
+.menu-sidebar {
+    border-radius: 10px;
+    position: fixed;
+    top: 80px; /* Below the fixed header */
+    left: 0;
+    width: 280px; /* Adjust width as needed */
+    height: calc(100vh - 80px); /* Fill remaining viewport height */
+    background: #f7f7f7;
+    padding: 15px;
+    overflow-y: auto; /* Allows scrolling inside sidebar if content overflows */
+    border-right: 1px solid #ddd;
+}
+
+/* Search Bar */
+.search-bar {
+    margin-bottom: 15px;
+    position: sticky;
+    top: 0;
+    background: #f7f7f7;
+    padding: 10px;
+    z-index: 10;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Ensure Menu Sections are Scrollable */
+.menu-nav {
+    margin-top: 10px;
+    overflow-y: auto;
+    max-height: calc(100vh - 140px); /* Prevents overflow */
+}
+
+/* Menu Sections */
+.menu-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Main Menu Section */
+.menu-section {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+    position: relative;
+}
+
+/* Highlight section on hover */
+.menu-section:hover,
+.menu-section.active {
+    background: #2c3e50;
+    color: white;
+}
+
+/* Category List (Hidden by Default) */
+.menu-categories {
+    list-style: none;
+    padding-left: 15px;
+    display: none; /* Hide categories initially */
+}
+
+/* Show categories when parent is active */
+.menu-section.active + .menu-categories {
+    display: block;
+}
+
+/* Highlight active category */
+.menu-category.active {
+    font-weight: bold;
+    background: #f0f0f0;
+    border-radius: 5px;
+}
+
+/* Show categories when section is active */
+.menu-categories.open {
+    display: block;
+}
+
+/* Category Items */
+.menu-category {
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+    font-size: 0.9rem;
+}
+
+/* Highlight category on hover */
+.menu-category:hover {
+    background: #dfe6e9;
+}
+
+/* Right Content */
+.menu-content {
+    flex: 1;
+}
+
+/* Dish Category */
+.dish-category {
+    margin-bottom: 20px;
+}
+
+/* Dish Category Title */
+.dish-category h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.dish-category h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+/* Dish Item */
+.dish-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.dish-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.dish-info {
+    flex: 1;
+    margin-left: 15px;
+}
+
+.dish-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.dish-info p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.price {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Modal Background */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+    background: white;
+    width: 400px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s;
+}
+
+/* Close Button */
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 32px; /* Ensure circular shape */
+    height: 32px;
+    background: white; /* White background */
+    border: none;
+    border-radius: 50%; /* Fully rounded */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+/* Center the "X" inside */
+.close-modal i {
+    font-size: 1.2rem;
+    color: black;
+    line-height: 1;
+}
+
+/* Modal Image */
+.modal-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Modal Info */
+.modal-info {
+    padding: 15px;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.modal-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.modal-description {
+    font-size: 1rem;
+    color: #555;
+    margin: 10px 0;
+}
+
+/* Tags */
+.modal-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.modal-tag {
+    background: #f8e1e1;
+    color: #b52e2e;
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+/* Save Button */
+.modal-save {
+    width: 100%;
+    padding: 15px;
+    background: #2c3e50;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 0 0 15px 15px;
+}
+
+.modal-save i {
+    margin-left: 5px;
+}
+
+/* 🔹 Sidebar Toggle Button (For Mobile) */
+.sidebar-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* 🔹 Close Sidebar Button (For Mobile) */
+.close-sidebar {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/* 🔹 Sidebar Overlay (Covers Screen When Sidebar is Open) */
+.sidebar-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 1500;
+}
+
+/* Show Overlay When Sidebar is Open */
+.menu-sidebar.open + .sidebar-overlay {
+    display: block;
+}
+
+/* Modal Fade Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 🔹 Mobile-Only Design (for screens smaller than 768px) */
+@media (max-width: 768px) {
+
+    /* 🔸 Sticky Header */
+    .menu-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 15px;
+        background: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* 🔸 Header Layout */
+    .header-left, .header-right {
+        display: flex;
+        align-items: center;
+    }
+
+    .header-center {
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    /* 🔸 Logo */
+    .menu-logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    /* 🔸 Search & Language */
+    .search-icon {
+        font-size: 1.2rem;
+        margin-right: 15px;
+        cursor: pointer;
+    }
+
+    .language-btn {
+        border: none;
+        background: none;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+
+    .menu-sidebar {
+        position: fixed;
+        top: 0;
+        left: -100%; /* Hidden by default */
+        width: 250px;
+        height: 100vh;
+        background: #f7f7f7;
+        padding: 20px;
+        transition: left 0.3s ease;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 2000;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu-sidebar.open {
+        left: 0; /* Show sidebar */
+    }
+
+    /* Show Sidebar Toggle & Close Button */
+    .sidebar-toggle {
+        display: inline-block;
+    }
+
+    /* Close Button */
+    .close-sidebar {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        background: white;
+        border: none;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    /* 🔹 Adjust Search Bar Placement */
+    .search-bar {
+        margin-top: 50px; /* Moves search bar down */
+    }
+
+    /* 🔹 Ensure Categories Fit Well */
+    .menu-nav {
+        flex-grow: 1;
+        overflow-y: auto;
+    }
+
+    /* 🔸 Section Dropdown */
+    .section-dropdown {
+        margin-top: 60px;
+        padding: 10px 15px;
+        background: white;
+    }
+
+    #section-select {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    /* 🔸 Scrollable Categories */
+    .category-scroll-container {
+        white-space: nowrap;
+        overflow-x: auto;
+        padding: 10px 15px;
+        background: white;
+    }
+
+    .category-list {
+        display: flex;
+        gap: 10px;
+    }
+
+    .category-list button {
+        padding: 8px 12px;
+        border: none;
+        background: #f0f0f0;
+        font-size: 0.9rem;
+        border-radius: 20px;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+
+    .category-list button.active {
+        background: #2c3e50;
+        color: white;
+    }
+
+    /* 🔸 Main Content */
+    .menu-content {
+        padding: 15px;
+    }
+
+    /* 🔸 Dish Category */
+    .dish-category h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    /* 🔸 Dish Item */
+    .dish-item {
+        display: flex;
+        align-items: center;
+        background: white;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 10px;
+    }
+
+    .dish-item img {
+        width: 80px;
+        height: 80px;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+
+    .dish-info {
+        flex: 1;
+        margin-left: 15px;
+    }
+
+    .dish-info h3 {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+    }
+
+    /* 🔸 Dish Modal */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content {
+        background: white;
+        width: 90%;
+        max-width: 400px;
+        border-radius: 15px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .close-modal {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        background: white;
+        border: none;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
+}

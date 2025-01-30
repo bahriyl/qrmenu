@@ -1,0 +1,254 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif; /* Use Lato font */
+}
+
+/* Banner Section */
+.banner {
+    background-image: url('https://static.shaketopay.com.ua/backgroundimage/7CD0A58BF98DCE67C4D36A04333ADA10.jpeg'); /* Background image */
+    background-size: cover; /* Cover the full area */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* No repeat */
+    height: 30vh; /* Set the banner height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Positioning of logo-box */
+.container {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: -50px; /* Moves half of the box below the banner */
+    width: 100%;
+}
+
+/* Styling for the logo box */
+.logo-box {
+    background: rgba(255, 255, 255); /* white */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners */
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo Styling */
+.logo {
+    width: 80px; /* Smaller logo */
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Name and Address */
+.logo-box h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.logo-box p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Section for the two lower boxes */
+.info-section {
+    display: flex; /* Align side by side */
+    justify-content: center; /* Center both boxes */
+    gap: 40px; /* Space between them */
+    padding: 100px 10% 50px; /* Ensure space above */
+}
+
+/* General styling for both lower boxes */
+.menu-box, .restaurant-box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: left;
+    width: 450px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Shifting the menu box slightly to the right */
+.menu-box {
+    margin-right: 0px;
+}
+
+/* Shifting the restaurant box slightly to the left */
+.restaurant-box {
+    margin-left: 0px;
+
+    display: flex; /* Enables Flexbox */
+    flex-direction: column; /* Arrange children in a column */
+    justify-content: space-between; /* Distribute elements evenly */
+    height: 100%; /* Ensures it stretches fully */
+}
+
+/* Add spacing between each section */
+.restaurant-box h3,
+.restaurant-box h4,
+.restaurant-box p {
+    margin-bottom: 10px; /* Adds spacing between elements */
+}
+
+/* Flexbox layout for icon + text */
+.info-item {
+    display: flex;
+    gap: 8px; /* Space between icon and text */
+    font-size: 1rem;
+    color: #666; /* Slightly darker text */
+    margin-top: 15px;
+}
+
+/* Styling for the icons */
+.info-item i {
+    font-size: 1.2rem;
+    color: #333; /* Darker icon color */
+}
+
+/* Styling the menu items */
+.menu-list {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-list li {
+    background: rgba(255, 255, 255, 0.9); /* Corrected typo: rgba instead of gba */
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 10px; /* Rounded corners */
+    border: 1px solid #ccc; /* Thin grey border */
+    cursor: pointer;
+    transition: background 0.3s, border-color 0.3s;
+    font-weight: 700;
+}
+
+.menu-list li:hover {
+    background: #eaeaea;
+}
+
+.restaurant-box p {
+    font-weight: 300;
+}
+
+/* 🔹 Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    /* 🔸 Adjust Banner */
+    .banner {
+        height: 25vh; /* Reduce height for better fit */
+    }
+
+    /* 🔸 Adjust Logo Box */
+    .container {
+        bottom: -30px; /* Move higher */
+    }
+
+    .logo-box {
+        width: 250px; /* Make smaller */
+        padding: 15px;
+    }
+
+    .logo {
+        width: 60px; /* Smaller logo */
+        height: 60px;
+    }
+
+    .logo-box h2 {
+        font-size: 1.5rem; /* Reduce font size */
+    }
+
+    .logo-box p {
+        font-size: 0.9rem; /* Reduce font size */
+    }
+
+    /* 🔸 Stack Info Section for Mobile */
+    .info-section {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center align */
+        gap: 20px; /* Reduce spacing */
+        padding: 60px 5% 30px; /* Reduce padding */
+    }
+
+    .menu-box, .restaurant-box {
+        width: 100%; /* Make full width */
+        padding: 15px; /* Reduce padding */
+    }
+
+    /* 🔸 Adjust Menu List for Mobile */
+    .menu-list li {
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    /* 🔸 Adjust Restaurant Info Spacing */
+    .restaurant-box h3,
+    .restaurant-box h4,
+    .restaurant-box p {
+        margin-bottom: 8px;
+    }
+
+    /* 🔸 Adjust Icons */
+    .info-item {
+        font-size: 0.9rem;
+    }
+
+    .info-item i {
+        font-size: 1rem; /* Adjust icon size */
+    }
+}
+
+/* 🔹 Further Adjustments for Extra Small Screens (Phones < 480px) */
+@media (max-width: 480px) {
+    /* 🔸 Adjust Banner */
+    .banner {
+        height: 20vh; /* Reduce further */
+    }
+
+    /* 🔸 Reduce Logo Box Size */
+    .logo-box {
+        width: 220px;
+        padding: 12px;
+    }
+
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .logo-box h2 {
+        font-size: 1.3rem;
+    }
+
+    .logo-box p {
+        font-size: 0.85rem;
+    }
+
+    /* 🔸 Adjust Spacing for Sections */
+    .info-section {
+        padding: 40px 5% 20px;
+    }
+
+    /* 🔸 Adjust Text Sizes for Mobile Readability */
+    .menu-box h3, .restaurant-box h3 {
+        font-size: 1.3rem;
+    }
+
+    .restaurant-box h4 {
+        font-size: 1.1rem;
+    }
+
+    .restaurant-box p {
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="styles.css"> 
+    
+    <!-- Google Fonts (Lato) -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <!-- Banner with Logo, Name, and Address -->
+    <header class="banner">
+        <div class="container">
+            <div class="logo-box">
+                <img src="" alt="Restaurant Logo" class="logo"> <!-- Logo will be dynamically set -->
+                <h2 class="restaurant-name"></h2> <!-- Restaurant Name -->
+                <p class="restaurant-address"></p> <!-- Restaurant Address -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Section for Menu and Restaurant Info Boxes -->
+    <section class="info-section">
+        
+        <!-- Menu Sections Box -->
+        <div class="menu-box">
+            <h3>Розділи меню:</h3>
+            <ul class="menu-list"></ul> <!-- Menu items will be dynamically inserted -->
+        </div>
+
+        <!-- Restaurant Info Box -->
+        <div class="restaurant-box">
+            <h3>Про заклад</h3>
+            <p class="about-text"></p> <!-- About text will be dynamically inserted -->
+
+            <!-- Address Section -->
+            <div class="info-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <p>Адреса</p>
+            </div>
+            <h4 class="restaurant-address"></h4> <!-- Address dynamically inserted -->
+
+            <!-- Working Hours Section -->
+            <div class="info-item">
+                <i class="fa-solid fa-clock"></i>
+                <p>Робочі години</p>
+            </div>
+            <h4 class="working-hours"></h4> <!-- Working hours dynamically inserted -->
+
+            <!-- Phone Section -->
+            <div class="info-item">
+                <i class="fa-solid fa-phone"></i>
+                <p>Телефон</p>
+            </div>
+            <h4 class="phone-number"></h4> <!-- Phone dynamically inserted -->
+        </div>
+    </section>
+
+    <!-- Link to External JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
