@@ -1,5 +1,5 @@
 // API URL (Replace with your actual API endpoint)
-const API_URL = "http://192.168.31.50:5000/api/restaurant";
+const API_URL = "https://qrmenu-api-tzzlx.ondigitalocean.app/api/restaurant";
 
 // Function to fetch and update restaurant data dynamically
 async function fetchRestaurantData() {
