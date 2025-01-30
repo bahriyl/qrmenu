@@ -1,5 +1,5 @@
 // API URL (Replace with actual API endpoint)
-const API_URL = "http://192.168.31.50:5000/api";
+const API_URL = "https://qrmenu-api-tzzlx.ondigitalocean.app/api";
 
 // Get modal elements
 const modal = document.getElementById("dish-modal");
