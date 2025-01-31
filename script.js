@@ -13,6 +13,7 @@ async function fetchRestaurantData() {
         // Update Logo, Name, and Address
         document.querySelector(".logo").src = data.logo;
         document.querySelector(".restaurant-name").textContent = data.name;
+        document.querySelector(".title").textContent = data.name;
         document.querySelectorAll(".restaurant-address").forEach(el => el.textContent = data.address);
 
         // Update About Text
@@ -28,10 +29,7 @@ async function fetchRestaurantData() {
         });
 
         // Update Working Hours
-        document.querySelector(".working-hours").innerHTML = `
-            <strong>Пн-Пт:</strong> ${data.workingHours.weekdays} <br>
-            <strong>Сб-Нд:</strong> ${data.workingHours.weekends}
-        `;
+        document.querySelector(".working-hours").innerHTML = `<strong> ${data.workingHours} </strong>`;
 
         // Update Phone
         document.querySelector(".phone-number").textContent = data.phone;
