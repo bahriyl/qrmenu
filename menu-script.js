@@ -65,7 +65,9 @@ function filterDishes() {
 
 // Function to open modal
 function openModal(dish) {
-    modalImage.src = dish.image;
+    // Set Default Image (Restaurant Logo)
+    const restaurantLogo = document.querySelector(".menu-logo").src; 
+    modalImage.src = dish.image ? dish.image : restaurantLogo; // Use dish image if available, else use logo
     modalTitle.textContent = dish.name;
     modalPrice.textContent = `${dish.price} ₴`;
     modalDescription.textContent = dish.description;
