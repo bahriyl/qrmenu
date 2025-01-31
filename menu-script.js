@@ -168,23 +168,23 @@ async function loadMenu() {
                     categoryItem.classList.add("menu-category");
                     categoryItem.textContent = category.name;
                     categoryItem.setAttribute("data-category-id", category.name); // ✅ Add category name as attribute
-            
+
                     // Create a category container in dishes
                     const categoryDiv = document.createElement("div");
                     categoryDiv.classList.add("dish-category");
                     categoryDiv.id = `category-${category.id}`; // Unique ID for scrolling
                     categoryDiv.setAttribute("data-category-id", category.name); // ✅ Add attribute to the category div
-            
+
                     sectionDiv.appendChild(categoryDiv);
-            
+
                     // Add category title
                     const categoryTitle = document.createElement("h3");
                     categoryTitle.textContent = category.name;
                     categoryDiv.appendChild(categoryTitle);
-            
+
                     // Load dishes inside this category
                     loadDishes(category.id, categoryDiv);
-            
+
                     // Attach click event for category scrolling
                     categoryItem.addEventListener("click", (event) => {
                         event.stopPropagation(); // Prevent section click from toggling categories
@@ -192,10 +192,10 @@ async function loadMenu() {
                             behavior: "smooth"
                         });
                     });
-            
+
                     categoryList.appendChild(categoryItem);
                 });
-            
+
                 menuList.appendChild(sectionItem);
                 menuList.appendChild(categoryList);
             }
@@ -216,9 +216,12 @@ async function loadDishes(categoryId, container) {
             const dishDiv = document.createElement("div");
             dishDiv.classList.add("dish-item");
 
+            // Set Default Image (Restaurant Logo)
+            const restaurantLogo = document.querySelector(".menu-logo").src;
+
             // Dish Image
             const img = document.createElement("img");
-            img.src = dish.image;
+            img.src = dish.image ? dish.image : restaurantLogo; // Use dish image if available, else use logo
             img.alt = dish.name;
 
             // Dish Info
@@ -328,4 +331,15 @@ document.addEventListener("click", (event) => {
         sidebar.classList.remove("open");
         sidebarOverlay.style.display = "none"; // Hide overlay
     }
+});
+
+// Redirect to main page when clicking on logo, name, or address
+document.addEventListener("DOMContentLoaded", () => {
+    const elementsToRedirect = document.querySelectorAll(".menu-logo, .restaurant-name, .restaurant-address");
+
+    elementsToRedirect.forEach(element => {
+        element.addEventListener("click", () => {
+            window.location.href = "/"; // Change to actual main page if needed
+        });
+    });
 });
