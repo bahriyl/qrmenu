@@ -69,7 +69,7 @@ function openModal(dish) {
     const restaurantLogo = document.querySelector(".menu-logo").src; 
     modalImage.src = dish.image ? dish.image : restaurantLogo; // Use dish image if available, else use logo
     modalTitle.textContent = dish.name;
-    modalPrice.textContent = `${dish.price} ₴`;
+    modalPrice.textContent = `${dish.price} ₪`;
     modalDescription.textContent = dish.description;
 
     // Add tags dynamically
@@ -239,7 +239,7 @@ async function loadDishes(categoryId, container) {
             // Dish Price
             const price = document.createElement("div");
             price.classList.add("price");
-            price.textContent = `${dish.price} ₴`;
+            price.textContent = `${dish.price} ₪`;
 
             // Click event to open modal
             dishDiv.onclick = () => openModal(dish);
